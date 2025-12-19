@@ -67,3 +67,28 @@ order by age desc;
 select distinct country from students2;                -- different country
 select distinct course from students2;                 -- different course
 select distinct country, course from students2;        -- different country, course combination
+
+
+-- filtering (where, =)
+select * from students2 where country = 'Nepal';
+select * from students2 where course = 'Computer Science';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
