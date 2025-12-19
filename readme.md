@@ -1,8 +1,3 @@
-Below is a **clean, beginner-friendly README.md** you can directly add to your project.
-It clearly shows **what PostgreSQL topics you have covered** and is easy to revise later.
-
----
-
 # 📘 PostgreSQL Learning Progress – README
 
 ## ✅ Summary
