@@ -63,4 +63,7 @@ from
   students2
 order by age desc;
 
-
+-- distinct
+select distinct country from students2;                -- different country
+select distinct course from students2;                 -- different course
+select distinct country, course from students2;        -- different country, course combination
