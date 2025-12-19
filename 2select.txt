@@ -1,0 +1,66 @@
+-- create table
+create table students2(
+  id serial primary key,
+  first_name varchar(50) not null,
+  last_name varchar(50) not null,
+  age int2,
+  grade varchar(2),
+  course varchar(50),
+  email varchar(50) unique not null,
+  dob date,
+  blood_group varchar(5),
+  country varchar(50)
+)
+
+-- insert data
+INSERT INTO students2
+(first_name, last_name, age, grade, course, email, dob, blood_group, country)
+VALUES
+('Sajid', 'Ahmed', 21, 'A+', 'Computer Science', 'sajid.ahmed1@gmail.com', '2004-02-15', 'O+', 'Bangladesh'),
+('Rahim', 'Uddin', 22, 'A', 'Information Technology', 'rahim.uddin@gmail.com', '2003-08-10', 'A+', 'Bangladesh'),
+('Karim', 'Hasan', 20, 'A-', 'Software Engineering', 'karim.hasan@gmail.com', '2005-01-22', 'B+', 'Bangladesh'),
+('Ayesha', 'Khan', 19, 'B+', 'Computer Science', 'ayesha.khan@gmail.com', '2006-05-12', 'O-', 'India'),
+('Nusrat', 'Jahan', 21, 'B', 'Data Science', 'nusrat.jahan@gmail.com', '2004-09-30', 'AB+', 'India'),
+('Fahim', 'Rahman', 23, 'B-', 'Electrical Engineering', 'fahim.rahman@gmail.com', '2002-11-18', 'A-', 'India'),
+('Tanvir', 'Islam', 20, 'A+', 'Cyber Security', 'tanvir.islam@gmail.com', '2005-03-25', 'B-', 'Pakistan'),
+('Sabbir', 'Hossain', 22, 'A', 'Computer Science', 'sabbir.hossain@gmail.com', '2003-07-14', 'O+', 'Pakistan'),
+('Mehedi', 'Hasan', 21, 'A-', 'Artificial Intelligence', 'mehedi.hasan@gmail.com', '2004-04-09', 'A+', 'Pakistan'),
+('Rafi', 'Mahmud', 19, 'B+', 'Software Engineering', 'rafi.mahmud@gmail.com', '2006-12-01', 'O+', 'Pakistan'),
+('Jannat', 'Ara', 20, 'B', 'Information Systems', 'jannat.ara@gmail.com', '2005-06-20', 'B+', 'Nepal'),
+('Imran', 'Kamal', 23, 'C', 'Business Analytics', 'imran.kamal@gmail.com', '2002-02-17', 'AB-', 'Nepal'),
+('Nabila', 'Sultana', 21, 'A+', 'Computer Science', 'nabila.sultana@gmail.com', '2004-10-05', 'O+', 'Nepal'),
+('Arif', 'Haque', 22, 'B-', 'Networking', 'arif.haque@gmail.com', '2003-01-29', 'A+', 'Nepal'),
+('Sumaiya', 'Akter', 19, 'A', 'Software Engineering', 'sumaiya.akter@gmail.com', '2006-08-16', 'B+', 'Sri Lanka'),
+('Mahmud', 'Rana', 24, 'C', 'Mechanical Engineering', 'mahmud.rana@gmail.com', '2001-09-11', 'O-', 'Sri Lanka'),
+('Farhan', 'Ali', 20, 'B+', 'Data Science', 'farhan.ali@gmail.com', '2005-11-07', 'AB+', 'Sri Lanka'),
+('Tasnim', 'Nawrin', 21, 'A-', 'Computer Science', 'tasnim.nawrin@gmail.com', '2004-03-03', 'A-', 'Sri Lanka'),
+('Siam', 'Chowdhury', 22, 'B', 'Information Technology', 'siam.chowdhury@gmail.com', '2003-06-26', 'O+', 'Malaysia'),
+('Rima', 'Paul', 20, 'A', 'Cyber Security', 'rima.paul@gmail.com', '2005-12-19', 'B-', 'Malaysia'),
+('Anik', 'Sarker', 23, 'D', 'Computer Engineering', 'anik.sarker@gmail.com', '2002-04-08', 'A+', 'Malaysia'),
+('Mithila', 'Roy', 19, 'A+', 'Software Engineering', 'mithila.roy@gmail.com', '2006-09-14', 'O+', 'Malaysia'),
+('Shakib', 'Khan', 21, 'B+', 'Artificial Intelligence', 'shakib.khan@gmail.com', '2004-01-05', 'AB+', 'USA'),
+('Nayeem', 'Hossain', 22, 'B', 'Networking', 'nayeem.hossain@gmail.com', '2003-10-27', 'O-', 'USA'),
+('Faria', 'Islam', 20, 'A-', 'Computer Science', 'faria.islam@gmail.com', '2005-02-11', 'B+', 'USA'),
+('Rifat', 'Ahmed', 24, 'C', 'Information Systems', 'rifat.ahmed@gmail.com', '2001-07-23', 'A+', 'USA'),
+('Tania', 'Rahman', 21, 'A+', 'Data Science', 'tania.rahman@gmail.com', '2004-06-01', 'O+', 'UK'),
+('Saif', 'Ullah', 22, 'F', 'Software Engineering', 'saif.ullah@gmail.com', '2003-03-18', 'AB-', 'UK');
+
+
+
+-- using select
+select from students2;                                 -- select nothing
+select first_name, age from students2;
+select * from students2;                               -- select everything
+
+-- column alias
+select first_name as firstName from students2;
+select first_name as "First Name" from students2;       
+
+-- sort
+select 
+  first_name, age, country
+from 
+  students2
+order by age desc;
+
+
