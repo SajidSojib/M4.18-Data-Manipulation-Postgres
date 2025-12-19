@@ -254,13 +254,72 @@ SELECT LENGTH(first_name) FROM students2;
 
 ---
 
-## 📈 Aggregate Functions (Covered Conceptually)
+## **📈 Aggregate Functions - Practical Examples**
 
-* `AVG()`
-* `MAX()`
-* `MIN()`
-* `SUM()`
-* `COUNT()`
+### **MAX** - Find maximum value
+```sql
+SELECT MAX(age) FROM students2;
+```
+
+### **MIN** - Find minimum value
+```sql
+SELECT MIN(age) FROM students2;
+```
+
+### **AVG** - Calculate average
+```sql
+SELECT AVG(age) FROM students2;
+```
+
+### **SUM** - Calculate total sum
+```sql
+SELECT SUM(age) FROM students2;
+```
+
+### **COUNT** - Count rows/values
+```sql
+SELECT COUNT(first_name) FROM students2;
+```
+
+### **Additional Aggregate Examples:**
+
+#### **COUNT with different approaches:**
+```sql
+-- Count all rows (including NULL values)
+SELECT COUNT(*) FROM students2;
+
+-- Count non-NULL values in a specific column
+SELECT COUNT(age) FROM students2;
+
+-- Count distinct values
+SELECT COUNT(DISTINCT age) FROM students2;
+```
+
+#### **Combining multiple aggregates:**
+```sql
+SELECT 
+    COUNT(*) AS total_students,
+    AVG(age) AS average_age,
+    MIN(age) AS youngest,
+    MAX(age) AS oldest,
+    SUM(age) AS total_years
+FROM students2;
+```
+
+#### **Aggregates with WHERE clause:**
+```sql
+-- Average age of active students only
+SELECT AVG(age) 
+FROM students2 
+WHERE isActive = true;
+
+-- Count students older than 20
+SELECT COUNT(*) 
+FROM students2 
+WHERE age > 20;
+```
+
+**Note:** Aggregate functions operate on multiple rows and return a single value. They're typically used with `GROUP BY` clause for grouped calculations.
 
 
 ---

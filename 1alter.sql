@@ -57,15 +57,3 @@ alter table teachers
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
