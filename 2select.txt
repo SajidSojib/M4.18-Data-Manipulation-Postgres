@@ -161,6 +161,16 @@ from students2
 
 
 
+-- not operator
+select 
+  first_name, age, country
+from students2 
+  where country != 'Bangladesh';
+
+select 
+  first_name, age, country
+from students2 
+  where not country = 'Bangladesh';
 
 
 
