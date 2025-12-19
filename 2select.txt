@@ -113,8 +113,17 @@ from students2
 
 
 
+-- between operator
+select 
+  first_name, age, country
+from students2 
+  where age between 18 and 20;
 
-
+-- in operator
+select 
+  first_name, age, country
+from students2 
+  where country in ('Bangladesh', 'India', 'Nepal');
 
 
 
