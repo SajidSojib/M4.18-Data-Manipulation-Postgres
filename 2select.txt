@@ -126,6 +126,47 @@ from students2
   where country in ('Bangladesh', 'India', 'Nepal');
 
 
+-- search (like, Ilike)
+-- like -> case sensitive
+select 
+  first_name, age, country
+from students2 
+  where first_name like 'A%';                    -- starts with A
+
+select 
+  first_name, age, country
+from students2 
+  where first_name like 'A___';                  -- starts with A, can have 3 character after that
+
+select 
+  first_name, age, country
+from students2 
+  where first_name like '%a';                    -- last character will be 'a'
+
+select 
+  first_name, age, country
+from students2 
+  where first_name like '%a_';                    -- end with 'a' and 1 more character
+
+-- Ilike case insensitive
+select 
+  first_name, age, email
+from students2 
+  where email like 'A%';
+
+select 
+  first_name, age, email
+from students2 
+  where email Ilike 'A%';
+
+
+
+
+
+
+
+
+
 
 
 
