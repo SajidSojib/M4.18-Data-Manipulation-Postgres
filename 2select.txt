@@ -95,7 +95,21 @@ from students2 where
 
 
 
+-- comparison operator (>, <, =, <=, >=, !=)   (!=) = (<>)
+select 
+  first_name, age, country
+from students2 
+  where age < 22;
 
+select 
+  first_name, age, country
+from students2 
+  where country != 'Nepal';
+
+select 
+  first_name, age, country
+from students2 
+  where country <> 'Nepal';
 
 
 
