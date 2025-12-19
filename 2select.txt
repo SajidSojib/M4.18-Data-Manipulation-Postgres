@@ -71,13 +71,27 @@ select distinct country, course from students2;        -- different country, cou
 
 -- filtering (where, =)
 select * from students2 where country = 'Nepal';
+select * from students2 where grade = 'A+';
 select * from students2 where course = 'Computer Science';
 
 
+-- or operator
+select first_name, age, country 
+  from students2 where 
+country = 'Nepal' or country ='Bangladesh';
 
+-- and operator
+select first_name, age, grade
+  from students2 where 
+age = 22 and grade = 'B'
 
-
-
+-- select student with grade 'A' or 'B' in 'Software Engineering' or 'Cyber Security'
+select 
+  first_name, course, grade, country
+from students2 where
+(course = 'Software Engineering' or course = 'Cyber Security') 
+  and
+(grade = 'A+' or grade = 'A');
 
 
 
