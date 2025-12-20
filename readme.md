@@ -1,5 +1,10 @@
 # 📘 PostgreSQL Learning Progress – README
 
+## **All Slide Links**
+
+🔗 Practice Repo: https://github.com/Apollo-Level2-Web-Dev/postgreSQL_query_task
+
+
 ## ✅ Summary
 
 So far, I have learned:

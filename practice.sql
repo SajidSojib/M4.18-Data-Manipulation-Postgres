@@ -79,3 +79,66 @@ INSERT INTO orders (order_id, customer_id, book_id, order_date, quantity, total_
 (16, 5, 14, '2023-06-06', 1, 13.99),
 (17, 2, 6, '2023-06-07', 1, 19.99),
 (18, 7, 3, '2023-06-08', 2, 27.98);
+
+
+
+
+-- Display all books with their titles and prices, ordered by price (lowest to highest)
+select title, price from books order by price asc;
+
+-- Find all distinct countries where customers are from
+select distinct country from customers;
+
+-- Find all books whose titles start with "The"
+select * from books where title like 'The%';
+
+-- Change the column name first_name to customer_first_name in the customers table
+alter table customers rename column first_name to customer_first_name;
+alter table customers rename column customer_first_name to first_name;
+
+-- Find all books in the Fantasy genre
+select * from books where genre = 'Fantasy';
+
+-- Count the total number of orders in the database
+select count(*) as total_orders from orders;
+
+-- Find the average price of books by genre, but only show genres with an average price greater than $14
+SELECT DISTINCT                       -- 4️⃣ Step 4
+    genre,
+    (SELECT AVG(price)                -- 3️⃣ Step 3
+       FROM books b3                  -- ← THIRD books reference!
+       WHERE b1.genre = b3.genre
+    ) AS average_price
+FROM books b1                         -- 1️⃣ Step 1
+WHERE (
+    SELECT AVG(price)                 -- 2️⃣ Step 2
+    FROM books b2                     -- ← SECOND books reference!
+    WHERE b1.genre = b2.genre
+) > 14;
+
+
+-- Find all customers whose email addresses end with .com and are from either USA or UK
+select * from customers where (email like '%.com') and (country in ('USA', 'UK'));
+
+
+-- Display all customers with their full name in uppercase (concatenated first and last name),
+-- original email, and city in lowercase.
+-- Only show customers from USA or UK.
+select 
+  concat(upper(first_name), ' ', upper(last_name)) as full_name,
+  email, 
+  lower(city) 
+from customers where country in('USA','UK');
+
+
+-- Find the total revenue, average order amount, maximum order amount, and
+-- minimum order amount from all orders placed in June 2023
+select 
+  sum(total_amount) as total_revenue, 
+  round (avg(total_amount),2) as avg_order,
+  max(total_amount) as max_order,
+  min(total_amount) as min_order,
+  count(*) as orders_in_june
+from orders where
+  order_date between '2023-06-01' and '2023-06-30';
+
